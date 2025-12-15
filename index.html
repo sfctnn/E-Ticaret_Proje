@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Modern E-Ticaret</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- ÜST MENÜ BÖLÜMÜ -->
+    <!-- Sabit (sticky) bir navigasyon çubuğu oluşturuyoruz -->
+    <header class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <h1 class="logo">TechStore</h1>
+                
+                <!-- Sepet ikonu ve ürün sayısı göstergesi -->
+                <div class="cart-icon" id="cartIcon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <!-- Sepetteki ürün sayısını gösteren rozet -->
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO (GİRİŞ) BÖLÜMÜ -->
+    <!-- Kullanıcıyı karşılayan etkileyici ilk ekran -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Teknolojinin Geleceği Burada</h2>
+            <p class="hero-subtitle">En yeni ürünleri keşfedin ve avantajlı fiyatlarla sahip olun</p>
+            <button class="hero-btn" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                Ürünleri İncele
+            </button>
+        </div>
+    </section>
+
+    <!-- ÜRÜNLER BÖLÜMÜ -->
+    <!-- Ürünler JavaScript ile buraya dinamik olarak yüklenecek -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <h2 class="section-title">Öne Çıkan Ürünler</h2>
+            
+            <!-- Ürün kartları bu div içine JS ile eklenecek -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Ürünler script.js tarafından buraya render edilecek -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SEPET MODAL PENCERE -->
+    <!-- Kullanıcı sepet ikonuna tıkladığında açılacak overlay -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            
+            <!-- Modal başlık ve kapatma butonu -->
+            <div class="cart-header">
+                <h2>Alışveriş Sepetim</h2>
+                <button class="close-btn" id="closeCart">&times;</button>
+            </div>
+
+            <!-- Sepetteki ürünler bu alana listelenecek -->
+            <div class="cart-items" id="cartItems">
+                <!-- Sepet boşsa gösterilecek mesaj -->
+                <p class="empty-cart">Sepetiniz boş</p>
+            </div>
+
+            <!-- Sepet alt bilgi: Toplam tutar ve satın alma butonu -->
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Toplam:</span>
+                    <span class="total-price" id="totalPrice">0.00 ₺</span>
+                </div>
+                <button class="checkout-btn" id="checkoutBtn">Satın Al</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER (ALT BİLGİ) -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 TechStore - Tüm hakları saklıdır</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript dosyasını sayfanın en altına ekliyoruz -->
+    <!-- Böylece HTML tamamen yüklendikten sonra JS çalışır -->
+    <script src="script.js"></script>
+</body>
+</html>
